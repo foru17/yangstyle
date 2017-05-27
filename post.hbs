@@ -20,7 +20,7 @@
 						{{/if}}
 						<h1 class="post-title">{{title}}</h1>
 						<div class="post-meta">
-							by <span class="post-author">{{author}}</span> on <time class="published" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time> <span class="reading-time">Read in <span class="eta"></span></span>
+							by <span class="post-author">{{author}}</span> on <time class="published" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time> <span class="reading-time">阅读时间约<span class="eta"></span></span>
 						</div><!-- .post-meta -->
 						<a href="#" class="scroll-down square light"><i class="icon-chevron-down" aria-hidden="true"></i><span class="screen-reader-text">Scroll Down</span></a>
 					</div><!-- .inner -->
@@ -42,7 +42,7 @@
 					{{#if image}}
 					<img src="{{image}}" alt="{{name}}'s Picture" class="author-avatar" />
 					{{/if}}
-					<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
+					<h2 class="author-title">关于 <a href="{{url}}">{{name}}</a></h2>
 					{{#if bio}}
 					<p class="author-description">{{bio}}</p>
 					{{/if}}

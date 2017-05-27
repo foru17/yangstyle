@@ -36,7 +36,9 @@
 		});
 
 		// Post reading time
-		$('.post-template .post').readingTime();
+		$('.post-template .post').readingTime({
+			lang: "zhs",
+		});
 
 		// Show comments
 		if ( typeof disqus_shortname !== 'undefined' ) {
