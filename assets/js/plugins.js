@@ -1131,7 +1131,7 @@ Rainbow.extend("c", [{
 		var t = {
 				readingTimeTarget: ".eta",
 				wordCountTarget: null,
-				wordsPerMinute: 500,
+				wordsPerMinute: 600,
 				round: !0,
 				lang: "en",
 				lessThanAMinuteString: "",
@@ -1190,7 +1190,7 @@ Rainbow.extend("c", [{
 				if (a.round === !0) var u = Math.round(r / 60);
 				else var u = Math.floor(r / 60);
 				var g = Math.round(r - 60 * u);
-				if (a.round === !0) e(a.readingTimeTarget).text(u > 0 ? a.prependTimeString + u + " " + l : a.prependTimeString + s);
+				if (a.round === !0) e(a.readingTimeTarget).text(u > 0 ? a.prependTimeString + u + "" + l : a.prependTimeString + s);
 				else {
 					var o = u + ":" + g;
 					e(a.readingTimeTarget).text(a.prependTimeString + o)

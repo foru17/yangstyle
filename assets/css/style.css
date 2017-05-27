@@ -1174,6 +1174,12 @@ pre .storage {
  * 7.1 Posts and Pages
  * ----------------------------------------------------------------------------
  */
+
+.post-template .post-content{
+  
+}
+
+
 .post {
   margin-bottom: 60px;
 }

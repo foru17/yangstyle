@@ -41,30 +41,30 @@
 		});
 
 		// Show comments
-		if ( typeof disqus_shortname !== 'undefined' ) {
-			var disqus_loaded = false;
-			$('.comments-title').on('click', function() {
-				var _this = $(this),
-					icon = $(this).find('span');
-				if ( ! disqus_loaded ) {
-					$.ajax({
-						type: "GET",
-						url: "//" + disqus_shortname + ".disqus.com/embed.js",
-						dataType: "script",
-						cache: true
-					});
-					icon.removeClass('icon-plus').addClass('icon-close');
-					disqus_loaded = true;
-				} else {
-					$('#disqus_thread').slideToggle();
-					if ( icon.hasClass('icon-plus') ) {
-						icon.removeClass('icon-plus').addClass('icon-close');
-					} else {
-						icon.removeClass('icon-close').addClass('icon-plus');
-					}
-				}
-			});
-		}
+		// if ( typeof disqus_shortname !== 'undefined' ) {
+		// 	var disqus_loaded = false;
+		// 	$('.comments-title').on('click', function() {
+		// 		var _this = $(this),
+		// 			icon = $(this).find('span');
+		// 		if ( ! disqus_loaded ) {
+		// 			$.ajax({
+		// 				type: "GET",
+		// 				url: "//" + disqus_shortname + ".disqus.com/embed.js",
+		// 				dataType: "script",
+		// 				cache: true
+		// 			});
+		// 			icon.removeClass('icon-plus').addClass('icon-close');
+		// 			disqus_loaded = true;
+		// 		} else {
+		// 			$('#disqus_thread').slideToggle();
+		// 			if ( icon.hasClass('icon-plus') ) {
+		// 				icon.removeClass('icon-plus').addClass('icon-close');
+		// 			} else {
+		// 				icon.removeClass('icon-close').addClass('icon-plus');
+		// 			}
+		// 		}
+		// 	});
+		// }
 
 		// Display Instagram feed
 		if ( typeof instagram_user_id !== 'undefined' && typeof instagram_access_token !== 'undefined' ) {
