@@ -1184,11 +1184,9 @@ Rainbow.extend("c", [{
 
 		var u = function(n) {
 			if ("" !== n) {
-				console.log(n.trim())
 				var t = countArticleLength(n.trim()),
 					i = a.wordsPerMinute / 60,
 					r = t / i;
-				console.log(t);
 				if (a.round === !0) var u = Math.round(r / 60);
 				else var u = Math.floor(r / 60);
 				var g = Math.round(r - 60 * u);
