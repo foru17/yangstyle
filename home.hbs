@@ -1,0 +1,31 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The main content area on the homepage --}}
+<main class="site-main">
+	<div class="site-content inner-wide">
+
+		<div class="cover hero">
+			{{#if @blog.cover}}
+			<div class="cover-bg" style="background-image: url({{@blog.cover}})"></div>
+			{{/if}}
+			<div class="cover-content">
+				<div class="inner">
+					<div class="hero-wrap">
+						<h2 class="hero-title">{{@blog.title}}</h2>
+						<p class="hero-text">{{@blog.description}}</p>
+						{{#if @labs.subscribers}}
+						<p class="subscribe">
+							<a href="{{@blog.url}}/subscribe/" class="button light">Subscribe</a>
+						</p>
+						{{/if}}
+					</div>
+				</div><!-- .inner -->
+			</div><!-- .cover-content -->
+		</div><!-- .cover -->
+
+		{{!-- The tag below includes the post loop - partials/loop.hbs --}}
+		{{> "loop"}}
+
+	</div><!-- .site-content -->
+</main><!-- .site-main -->

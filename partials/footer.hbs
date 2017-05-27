@@ -1,0 +1,18 @@
+<footer class="site-footer">
+	<div class="footer-top">
+		<div class="inner-wide">
+			<div class="offsite-links">
+				{{#if @blog.twitter}}<a href="{{twitter_url}}"><i class="icon-twitter" aria-hidden="true"></i><span class="screen-reader-text">Twitter</span></a>{{/if}}
+				{{#if @blog.facebook}}<a href="{{facebook_url}}"><i class="icon-facebook" aria-hidden="true"></i><span class="screen-reader-text">Facebook</span></a>{{/if}}
+				<a href="https://dribbble.com/{{! Add Dribbble handle }}"><i class="icon-dribbble" aria-hidden="true"></i><span class="screen-reader-text">Dribbble</span></a>
+				<a href="https://www.vimeo.com/{{! Add Vimeo handle }}"><i class="icon-vimeo" aria-hidden="true"></i><span class="screen-reader-text">Vimeo</span></a>
+				<a href="https://www.youtube.com/user/{{! Add YouTube handle }}"><i class="icon-youtube" aria-hidden="true"></i><span class="screen-reader-text">YouTube</span></a>
+				<a href="{{@blog.url}}/rss/"><i class="icon-feed" aria-hidden="true"></i><span class="screen-reader-text">RSS</span></a>
+			</div><!-- .offsite-links -->
+			<a href="#page" class="top-link square"><i class="icon-chevron-up" aria-hidden="true"></i><span class="screen-reader-text">Back to the top</span></a>
+		</div><!-- .inner -->
+	</div><!-- .footer-top -->
+	<div class="site-info inner-wide">
+		<p><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} <br />Curious theme by <a target="_blank" href="https://justgoodthemes.com/">JustGoodThemes</a></p>
+	</div><!-- .site-info -->
+</footer><!-- .site-footer -->

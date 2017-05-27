@@ -1,0 +1,100 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+<main class="site-main">
+	<div class="site-content">
+
+		<article class="{{post_class}}">
+			<header class="cover post-header">
+				{{#if image}}
+				<div class="cover-bg" style="background-image: url({{image}})"></div>
+				{{/if}}
+				<div class="cover-content">
+					<div class="inner">
+						{{#if tags}}
+						<div class="tag-links">
+							{{tags separator=""}}
+						</div><!-- .tag-links -->
+						{{/if}}
+						<h1 class="post-title">{{title}}</h1>
+						<div class="post-meta">
+							by <span class="post-author">{{author}}</span> on <time class="published" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time> <span class="reading-time">Read in <span class="eta"></span></span>
+						</div><!-- .post-meta -->
+						<a href="#" class="scroll-down square light"><i class="icon-chevron-down" aria-hidden="true"></i><span class="screen-reader-text">Scroll Down</span></a>
+					</div><!-- .inner -->
+				</div><!-- .cover-content -->
+			</header><!-- .cover -->
+			<div class="post-content inner">
+				{{content}}
+			</div><!-- .post-content -->
+			<footer class="post-footer inner">
+				<div class="share-post">
+					<span>Share</span>
+					<a class="square" target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"><i class="icon-twitter" aria-hidden="true"></i><span class="screen-reader-text">Share on Twitter</span></a>
+					<a class="square" target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"><i class="icon-facebook" aria-hidden="true"></i><span class="screen-reader-text">Share on Facebook</span></a>
+					<a class="square" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}"><i class="icon-google" aria-hidden="true"></i><span class="screen-reader-text">Share on Google+</span></a>
+				</div>
+				{{!-- Everything inside the #author tags pulls data from the author --}}
+				{{#author}}
+				<div class="author-box{{^if image}} no-avatar{{/if}}">
+					{{#if image}}
+					<img src="{{image}}" alt="{{name}}'s Picture" class="author-avatar" />
+					{{/if}}
+					<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
+					{{#if bio}}
+					<p class="author-description">{{bio}}</p>
+					{{/if}}
+					<p class="author-links">
+						{{#if location}}<span class="author-location"><i class="icon-map-marker" aria-hidden="true"></i> {{location}}</span>{{/if}}
+						{{#if website}}<span class="author-website"><i class="icon-chain" aria-hidden="true"></i> <a href="{{website}}" target="_blank">{{website}}</a></span>{{/if}}
+						{{#if facebook}}<span class="author-facebook"><i class="icon-facebook" aria-hidden="true"></i> <a href="{{facebook_url}}">Facebook</a></span>{{/if}}
+						{{#if twitter}}<span class="author-twitter"><i class="icon-twitter" aria-hidden="true"></i> <a href="{{twitter_url}}">Twitter</a></span>{{/if}}
+					</p>
+				</div>
+				{{/author}}
+			</footer><!-- .post-footer -->
+		</article><!-- .post -->
+
+		{{!-- The tag below includes the theme comments - partials/comments.hbs --}}
+		{{> comments}}
+
+		{{!-- Email subscribe form --}}
+		{{#if @labs.subscribers}}
+		<div class="inner">
+			<div class="subscribe-box">
+				<h2 class="subscribe-box-title">Subscribe to {{@blog.title}}</h2>
+				<p>Get the latest posts delivered right to your inbox.</p>
+				{{subscribe_form form_class="gh-subscribe-form" placeholder="Your email address"}}
+			</div>
+		</div>
+		{{/if}}
+
+		{{!-- Previous/next post links --}}
+		<nav class="post-navigation">
+			{{#next_post}}
+			<a href="{{url}}" class="nav-next">
+				{{#if image}}
+				<div class="nav-bg" style="background-image: url({{image}})"></div>
+				{{/if}}
+				<div class="nav-inside">
+					<span class="nav-before">Next</span><span class="nav-title">{{title}}</span><span class="nav-date">{{date format="MMMM DD, YYYY"}}</span>
+				</div>
+			</a>
+			{{/next_post}}
+			{{#prev_post}}
+			<a href="{{url}}" class="nav-previous">
+				{{#if image}}
+				<div class="nav-bg" style="background-image: url({{image}})"></div>
+				{{/if}}
+				<div class="nav-inside">
+					<span class="nav-before">Previous</span><span class="nav-title">{{title}}</span><span class="nav-date">{{date format="MMMM DD, YYYY"}}</span>
+				</div>
+			</a>
+			{{/prev_post}}
+		</nav><!-- .post-navigation -->
+
+	</div><!-- .site-content -->
+</main><!-- .site-main -->
+{{/post}}

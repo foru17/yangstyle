@@ -1,0 +1,29 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The main content area on the tag page --}}
+<main class="site-main">
+	<section class="site-content">
+
+		<header class="cover page-header">
+			{{#if tag.image}}
+			<div class="cover-bg" style="background-image: url({{tag.image}})"></div>
+			{{/if}}
+			<div class="cover-content">
+				<div class="inner">
+					<div class="post-count">{{plural pagination.total empty='No posts' singular='% post' plural='% posts'}} tagged</div>
+					<h1 class="page-title">{{tag.name}}</h1>
+					{{#if tag.description}}
+					<p class="page-description">{{tag.description}}</p>
+					{{/if}}
+				</div><!-- .inner -->
+			</div><!-- .cover-content -->
+		</header><!-- .cover -->
+
+		<div class="inner-wide">
+			{{!-- The tag below includes the post loop - partials/loop-archive.hbs --}}
+			{{> "loop-archive"}}
+		</div><!-- .inner-wide -->
+
+	</section><!-- .site-content -->
+</main><!-- .site-main -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{!-- Document Settings --}}
+	<meta charset="utf-8">
+
+	{{!-- Page Meta --}}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	{{!-- Brand icon --}}
+	<link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+
+	{{!-- Styles --}}
+	<link href="https://yangstyle.b0.upaiyun.com/fonts/font.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+	{{!-- Theme settings --}}
+	<script type="text/javascript">
+		var disqus_shortname = 'my_disqus_shortname', // replace my_disqus_shortname with your shortname
+			instagram_user_id = '2372162651', // add your Instagram user ID
+			instagram_access_token = '2372162651.d4daff6.d6c91752b4914a8da6e01a85747ae89e'; // add your Instagram access token
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="{{asset "js/html5.js"}}"></script>
+	<![endif]-->
+
+	{{!-- Ghost outputs important style and meta data with this tag --}}
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+	<div id="page" class="site">
+		{{!-- The tag below includes the theme header - partials/header.hbs --}}
+		{{> header}}
+		{{!-- Everything else gets inserted here --}}
+		{{{body}}}
+		{{!-- The tag below includes the theme header - partials/sidebar.hbs --}}
+		{{> sidebar}}
+		{{!-- The tag below includes the theme footer widget area - partials/footer-widgets.hbs --}}
+		{{> footer-widgets}}
+		{{!-- The tag below includes the theme footer - partials/footer.hbs --}}
+		{{> footer}}
+		<div class="overlay"></div>
+	</div><!-- #page -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	{{!-- Ghost outputs important scripts and data with this tag --}}
+	{{ghost_foot}}
+
+	{{!-- JavaScript files --}}
+	<script type="text/javascript" src="{{asset "js/plugins.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
+</body>
+</html>

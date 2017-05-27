@@ -1,0 +1,8 @@
+<nav class="site-navigation" aria-label="Main Menu">
+	<h2 class="screen-reader-text">Explore Website</h2>
+	<ul class="menu">
+		{{#foreach navigation}}
+		<li class="menu-item {{slug}}{{#if current}} current-menu-item{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+	</ul><!-- .menu -->
+</nav><!-- .site-navigation -->

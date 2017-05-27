@@ -1,0 +1,30 @@
+<aside class="sidebar" aria-label="Sidebar">
+	<div class="sidebar-scrollable">
+		<div class="widget-area">
+			{{#if @blog.navigation}}
+				{{navigation}}
+			{{/if}}
+			<section class="widget widget-text">
+				<h2 class="widget-title">About {{@blog.title}}</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed lacus id tortor iaculis iaculis dignissim eget justo. Maecenas posuere eros nisl, ut pharetra turpis faucibus a. In imperdiet urna mattis lacus mollis, sit amet pulvinar purus vehicula.</p>
+			</section><!-- .widget -->
+			{{#if @labs.subscribers}}
+			<section class="widget widget-newsletter">
+				<h2 class="widget-title">{{@blog.title}} Newsletter</h2>
+				<p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+				{{subscribe_form form_class="gh-subscribe-form" placeholder="Your email address"}}
+			</section><!-- .widget -->
+			{{/if}}
+			<section class="widget widget-text">
+				<h2 class="widget-title">Contact</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed lacus id tortor iaculis iaculis dignissim eget justo. Maecenas posuere eros nisl, ut pharetra turpis faucibus a. In imperdiet urna mattis lacus mollis, sit amet pulvinar purus vehicula.</p>
+				<ul class="contacts">
+					<li><span class="icon icon-envelope" aria-hidden="true"></span> blogin [at] gmail.com</li>
+					<li><span class="icon icon-map-marker" aria-hidden="true"></span> 123 Some Street, Some City, AA 12345</li>
+					<li><span class="icon icon-phone" aria-hidden="true"></span> +123 112 23445</li>
+				</ul>
+			</section><!-- .widget -->
+		</div><!-- .widget-area -->
+		<a class="sidebar-toggle"><span class="screen-reader-text">Close Sidebar</span><span class="icon" aria-hidden="true"></span></a>
+	</div><!-- .sidebar-scrollable -->
+</aside><!-- .sidebar -->
